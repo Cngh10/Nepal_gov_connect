@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Connections - Nepal Public-Gov Connect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#920022",
+                        "surface-bright": "#f9f9fb",
+                        "surface-variant": "#e2e2e4",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary": "#ba002e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f0f2",
+                        "on-secondary-fixed": "#40000a",
+                        "outline": "#747683",
+                        "on-tertiary-container": "#ff8a62",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#12419b",
+                        "outline-variant": "#c4c6d4",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434652",
+                        "on-tertiary-fixed-variant": "#802a07",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadc",
+                        "surface-tint": "#335ab4",
+                        "surface-container": "#eeeef0",
+                        "primary-fixed": "#dae1ff",
+                        "secondary-fixed": "#ffdad9",
+                        "on-primary-fixed": "#001849",
+                        "on-background": "#1a1c1d",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-low": "#f3f3f5",
+                        "background": "#f9f9fb",
+                        "primary": "#002465",
+                        "surface": "#f9f9fb",
+                        "primary-container": "#003893",
+                        "on-primary-container": "#88a7ff",
+                        "inverse-surface": "#2f3132",
+                        "tertiary": "#501400",
+                        "tertiary-container": "#752201",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1d",
+                        "surface-container-highest": "#e2e2e4",
+                        "secondary-fixed-dim": "#ffb3b3",
+                        "inverse-primary": "#b3c5ff",
+                        "secondary-container": "#e31c40",
+                        "surface-container-high": "#e8e8ea",
+                        "on-secondary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Public Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-3">
+<a class="text-[#002465] dark:text-blue-400 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full flex items-center" href="/feed/">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-['Public_Sans'] font-semibold tracking-tight text-lg text-[#002465] dark:text-blue-200">Connections</h1>
+</div>
+<button class="text-[#002465] dark:text-blue-400 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 px-4 max-w-2xl mx-auto">
+<!-- Tab Navigation -->
+<div class="flex border-b border-outline-variant/30 mb-6">
+<button class="flex-1 py-4 text-center font-semibold text-primary border-b-2 border-secondary tracking-tight transition-all">
+            Followers <span class="ml-1 text-xs font-normal opacity-60">1.2k</span>
+</button>
+<button class="flex-1 py-4 text-center font-medium text-on-surface-variant hover:bg-surface-container-low transition-all">
+            Following <span class="ml-1 text-xs font-normal opacity-60">482</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative mb-8">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-xl py-3 pl-12 pr-4 text-sm transition-all placeholder:text-outline/70" placeholder="Search connections..." type="text"/>
+</div>
+<!-- User List Section -->
+<div class="space-y-4">
+<!-- User 1: Official -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-primary/5" data-alt="portrait of a confident middle-aged south asian man in formal attire with glasses and a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl_cuNadxDke651ACbxOz8lZaTcU2ykA82vve1s3A3l_HB2nO9L19cxUz4HzOfWFxH9Ac8ipWm3HtH_Ugg3LAKqC4yablIwABuEezsqPb8Q1c7y5FVad0LFu4GgyQnhSpqHkyJW7LIMJzKnJD72MCD25j0a5n1epK_hk297glAYCkYe2yf1xIQ2MOC47XQm9Xh26EQs5g7e6QS3_0mj-XpJK0WsHBuOYAJ4tV02HLupDxE24Yss22ECJyFULd0RclR_A8abYBbbp_H"/>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-on-surface leading-tight">Balendra Shah</h3>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">@MayorOfKathmandu</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-primary mt-1 border border-primary/10">Verified Official</span>
+</div>
+</div>
+<button class="px-5 py-2 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-semibold rounded-full active:scale-95 transition-transform shadow-md">
+                Follow
+            </button>
+</div>
+<!-- User 2: Citizen -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-primary/5" data-alt="headshot of a young nepalese woman with a friendly expression and artistic glasses in a sunny outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAtWM2pNfVSc5S8xY7tEr4NdK_FmMeYSrML6RceOx6M7oTeKttzJE05--ldH3-mQUhSZ5_hRGMgHRLavMcyLURgCb4P57vHp77YCIEODfuA3eTnpYuvK-0EEkc9kc0ufhhGa4ErkeYc8QxLAKvkByiTbLzItJvQlt89flvxJz8i_nNObl7YCCscWC30l8Bl2nBSdehBXC8oCoCa9RZK_s5U5dxYMQJ_Fp-UP1bJcn87WhF6KwvrgdiDQSfS-1AKC-7Nnynb3EiUGz-"/>
+<div>
+<h3 class="font-bold text-on-surface leading-tight">Anjali Shrestha</h3>
+<p class="text-sm text-on-surface-variant font-medium">@anjali_ktm</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-surface-container text-on-surface-variant mt-1 border border-outline-variant/20">Citizen</span>
+</div>
+</div>
+<button class="px-5 py-2 border border-outline-variant text-on-surface-variant text-sm font-semibold rounded-full hover:bg-surface-container active:scale-95 transition-all">
+                Following
+            </button>
+</div>
+<!-- User 3: Official -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-primary/5" data-alt="professional portrait of a south asian man in a blazer looking directly at the camera with a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB2RyZSjxpTMZe0dBev4s4h4vxtOu2z25X2M2lHKONnZ7V0-5_uVTFhr_cn66jE33lIp81tA8qN1rLDhCyXvuV05X4zRvcZ0r6wxi7zrGNjXmLXQwpi9KL4yHSB2EmMCKsFNG4oOQZSGgi-mNKL1U9WgKkFcbIPqnysoyIlgg2uwHe_YlXE-_Jza9gaKfIJObs8iDBaKlqdGFe7BAhXAGot2stBslbwrycPsddbJkdie-yjxVGboFUbiG4fVgoBtdv8d6gl0eGVqgo"/>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-on-surface leading-tight">DPR Nepal</h3>
+<p class="text-sm text-on-surface-variant font-medium">@dpr_official</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-primary mt-1 border border-primary/10">Verified Official</span>
+</div>
+</div>
+<button class="px-5 py-2 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-semibold rounded-full active:scale-95 transition-transform shadow-md">
+                Follow
+            </button>
+</div>
+<!-- User 4: Citizen -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-primary/5" data-alt="portrait of a young man with beard and casual clothing in an urban environment with soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8TWhcAJf0UygUtkzo6XOqCB4YxaxC-8tAw5VMP9X6NyK50vLxEbr-bF1S_AnMHuuVsxB1Af_2RM-3hg4MMlvo3e6Ys0Iilp7reKelaDok5UnBBqtS1oLKJVK2OSdtSoK6x6R5-loVcLFgQqhWX-iFZJLGhWC1EhgoN1ZJ7wgEXxmDRZpd2LBxNGUX2zgfiAraCVPH63UyQRro0uaSNZmhvC2gynhID01e2gBimc7NFtIdVis64E1iITdKy_cTMreDacU-Jm3dbn1m"/>
+<div>
+<h3 class="font-bold text-on-surface leading-tight">Rohan Gurung</h3>
+<p class="text-sm text-on-surface-variant font-medium">@rohan_nepal</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-surface-container text-on-surface-variant mt-1 border border-outline-variant/20">Citizen</span>
+</div>
+</div>
+<button class="px-5 py-2 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-semibold rounded-full active:scale-95 transition-transform shadow-md">
+                Follow
+            </button>
+</div>
+<!-- User 5: Citizen -->
+<div class="group flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-primary/5" data-alt="modern close-up portrait of a woman with vibrant energy and colorful accessories in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCERqE-XKMihZlMaaaG3NFh4xhxHd1ByNmBkpYw_xcjVzx-rHMQGqnKbb8OSpCEihqwY9I3974prlbJ0-5xR9ffEtF3ueioXrfuJIgInLbCL91KwsjbayZ7gUbycTZpGyAeF0hKNKkOgFkkRnQgxxTq9CQ1qQY_LVGA9ebPLnn1tVwJZ0WofXVDM6VQoszjh4om9j_QPH6qmVljhn5ov_1HWhdhBUT7uLOcJPG7O_pIpthG0Mdgc9Btza5LNE5aZdRbKykXIENnAMmy"/>
+<div>
+<h3 class="font-bold text-on-surface leading-tight">Sita Magar</h3>
+<p class="text-sm text-on-surface-variant font-medium">@sita_magar</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-surface-container text-on-surface-variant mt-1 border border-outline-variant/20">Citizen</span>
+</div>
+</div>
+<button class="px-5 py-2 border border-outline-variant text-on-surface-variant text-sm font-semibold rounded-full hover:bg-surface-container active:scale-95 transition-all">
+                Following
+            </button>
+</div>
+</div>
+<!-- Empty State / Loading Indicator (Subtle) -->
+<div class="py-12 flex flex-col items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="group">group</span>
+<p class="text-xs font-label uppercase tracking-widest">End of results</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/feed/">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#002465] dark:text-blue-300 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 active:translate-y-0.5 transition-transform" href="/connections/">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Connect</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/submit_complaint/">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/messages/">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/profile/">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

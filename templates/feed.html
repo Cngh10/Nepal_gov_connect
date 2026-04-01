@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nepal Public-Gov Connect - Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e2e2e4",
+              "on-tertiary-fixed": "#390c00",
+              "on-secondary-fixed-variant": "#920022",
+              "surface-bright": "#f9f9fb",
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-fixed-dim": "#ffb59d",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#40000a",
+              "outline": "#747683",
+              "inverse-on-surface": "#f0f0f2",
+              "secondary": "#ba002e",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#ff8a62",
+              "on-secondary-container": "#fffbff",
+              "on-primary-fixed-variant": "#12419b",
+              "on-error": "#ffffff",
+              "outline-variant": "#c4c6d4",
+              "surface-dim": "#d9dadc",
+              "surface-container": "#eeeef0",
+              "surface-tint": "#335ab4",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434652",
+              "on-tertiary-fixed-variant": "#802a07",
+              "tertiary-fixed": "#ffdbd0",
+              "surface-container-low": "#f3f3f5",
+              "background": "#f9f9fb",
+              "on-primary-fixed": "#001849",
+              "on-background": "#1a1c1d",
+              "primary-fixed": "#dae1ff",
+              "secondary-fixed": "#ffdad9",
+              "tertiary-container": "#752201",
+              "tertiary": "#501400",
+              "on-primary-container": "#88a7ff",
+              "primary-container": "#003893",
+              "surface": "#f9f9fb",
+              "inverse-surface": "#2f3132",
+              "primary": "#002465",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e8e8ea",
+              "inverse-primary": "#b3c5ff",
+              "secondary-container": "#e31c40",
+              "on-surface": "#1a1c1d",
+              "surface-container-highest": "#e2e2e4",
+              "secondary-fixed-dim": "#ffb3b3",
+              "on-error-container": "#93000a",
+              "lali-gurans": "#ba002e"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9f9fb;
+        color: #1a1c1d;
+      }
+      .headline-font {
+        font-family: 'Public Sans', sans-serif;
+      }
+      .lali-gurans-gradient {
+        background: linear-gradient(135deg, #ba002e 0%, #8b0022 100%);
+      }
+      .liked .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
+      }
+      .liked {
+        color: #002465 !important;
+      }
+      .commented {
+        color: #002465 !important;
+      }
+      .commented .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
+      }
+      #sidebar-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #sidebar.active {
+        transform: translateX(0);
+      }
+    </style>
+<script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        overlay.classList.toggle('hidden');
+      }
+
+      function startCamera() {
+        const video = document.getElementById('camera-preview');
+        const container = document.getElementById('camera-modal');
+        container.classList.remove('hidden');
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(stream => {
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch(err => {
+            alert('Camera access denied or not available.');
+            container.classList.add('hidden');
+          });
+      }
+
+      function closeCamera() {
+        const video = document.getElementById('camera-preview');
+        const container = document.getElementById('camera-modal');
+        const stream = video.srcObject;
+        if (stream) {
+          const tracks = stream.getTracks();
+          tracks.forEach(track => track.stop());
+        }
+        container.classList.add('hidden');
+      }
+
+      function simulateLive() {
+        alert('Starting Live Stream Simulation... Connection established with Government Dashboard.');
+        const btn = document.querySelector('.lali-gurans-gradient.text-white');
+        btn.innerHTML = '<span class="material-symbols-outlined animate-pulse">sensors</span> LIVE';
+      }
+
+      function toggleLike(btn) {
+        const countSpan = btn.querySelector('.count');
+        let count = parseInt(countSpan.textContent);
+        if (btn.classList.contains('liked')) {
+          btn.classList.remove('liked');
+          countSpan.textContent = count - 1;
+        } else {
+          btn.classList.add('liked');
+          countSpan.textContent = count + 1;
+        }
+      }
+
+      function toggleComments(btn) {
+        btn.classList.toggle('commented');
+        const countSpan = btn.querySelector('.count');
+        let count = parseInt(countSpan.textContent);
+        if (btn.classList.contains('commented')) {
+            countSpan.textContent = count + 1;
+        } else {
+            countSpan.textContent = count - 1;
+        }
+      }
+
+      function toggleFilter() {
+        const dropdown = document.getElementById('filter-dropdown');
+        dropdown.classList.toggle('hidden');
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.closest('#filter-button-container')) {
+          const dropdown = document.getElementById('filter-dropdown');
+          if (dropdown && !dropdown.classList.contains('hidden')) {
+            dropdown.classList.add('hidden');
+          }
+        }
+      }
+
+      // Logic to handle the conditional submitted card visibility
+      window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+          document.getElementById('simulated-submitted-card').classList.remove('hidden');
+        }
+      });
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Sidebar / Navigation Drawer -->
+<div class="fixed inset-0 bg-black/50 z-[110] transition-opacity duration-300 opacity-0 pointer-events-none hidden" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<aside class="fixed left-0 top-0 h-full w-72 bg-white dark:bg-slate-900 z-[120] shadow-2xl transition-transform duration-300 -translate-x-full overflow-y-auto" id="sidebar">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-primary dark:text-blue-200">Aayush Shrestha</h2>
+<p class="text-xs text-outline">Verified Citizen</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-primary/5 text-primary font-bold" href="/feed/">
+<span class="material-symbols-outlined">rss_feed</span>
+<span>Community Feed</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="/connections/">
+<span class="material-symbols-outlined">groups</span>
+<span>Connections</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="/profile/">
+<span class="material-symbols-outlined">description</span>
+<span>My Reports</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="/notifications/">
+<span class="material-symbols-outlined">history</span>
+<span>My Activity</span>
+</a>
+<hr class="my-4 border-surface-container"/>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="/profile/">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-error hover:bg-error/5 transition-colors" href="/login/">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-4 h-16 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-3">
+<button class="transition-opacity duration-200 active:opacity-70 text-primary dark:text-blue-400 p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="headline-font tracking-tight font-bold text-lg text-primary dark:text-blue-100">Nepal Public-Gov Connect</h1>
+</div>
+<div class="flex items-center gap-2">
+<a class="transition-opacity duration-200 active:opacity-70 text-primary dark:text-blue-400 p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full relative" href="/submit_complaint/">
+<span class="material-symbols-outlined">videocam</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full border border-white"></span>
+</a>
+<a class="transition-opacity duration-200 active:opacity-70 text-primary dark:text-blue-400 p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full" href="/notifications/">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 max-w-3xl mx-auto px-4 md:px-6">
+<!-- Search & Filter Bar -->
+<section class="mb-8 flex flex-col md:flex-row gap-4 items-end">
+<div class="w-full md:flex-1">
+<h2 class="headline-font text-3xl font-extrabold tracking-tight text-primary mb-2">Community Feed</h2>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all outline-none rounded-t-lg" placeholder="Search government notices or citizen reports..." type="text"/>
+</div>
+</div>
+<div class="relative" id="filter-button-container">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-xl font-semibold shadow-md hover:opacity-90 transition-all active:scale-95" onclick="toggleFilter()">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="text-sm font-label uppercase tracking-widest">Filter</span>
+</button>
+<!-- Filter Dropdown -->
+<div class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-surface-container z-50 overflow-hidden" id="filter-dropdown">
+<div class="p-2 space-y-1">
+<button class="w-full text-left px-4 py-2 text-sm font-medium hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-3">
+<span class="material-symbols-outlined text-lg text-primary">campaign</span> Official
+                    </button>
+<button class="w-full text-left px-4 py-2 text-sm font-medium hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-3">
+<span class="material-symbols-outlined text-lg text-secondary">construction</span> Infrastructure
+                    </button>
+<button class="w-full text-left px-4 py-2 text-sm font-medium hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-3">
+<span class="material-symbols-outlined text-lg text-blue-600">water_drop</span> Public Service
+                    </button>
+<button class="w-full text-left px-4 py-2 text-sm font-medium hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-3 border-t border-surface-container mt-1" onclick="location.reload()">
+<span class="material-symbols-outlined text-lg text-outline">history</span> Recent
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feed List -->
+<div class="space-y-6">
+<!-- Complaint Card -->
+<article class="bg-surface-container-lowest overflow-hidden transition-all shadow-md border-2 border-primary/10 rounded-2xl">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-sm tracking-tight">Ram Prasad</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Citizen • Kathmandu • 2 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-[#fff8e1] text-[#f57f17] px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Pending</span>
+</div>
+</div>
+<div class="mb-3">
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1 block">Complaint</span>
+<h4 class="headline-font text-lg font-bold text-primary leading-tight">Road maintenance issue in Kathmandu</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-4 text-sm">
+The main road in my locality has been damaged for months. Potholes are everywhere, making it dangerous for vehicles and pedestrians. Despite multiple complaints to the local municipality, no action has been taken. This is affecting daily commute and safety.
+</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-6">
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+<span class="count">12</span> Supporters
+                        </button>
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="count">5</span> Comments
+                        </button>
+</div>
+<a class="text-primary font-bold text-xs hover:underline decoration-2 underline-offset-4" href="/complaint_detail/1/">View Details</a>
+</div>
+</div>
+</article>
+
+<!-- Complaint Card -->
+<article class="bg-surface-container-lowest overflow-hidden transition-all shadow-md border-2 border-primary/10 rounded-2xl">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-sm tracking-tight">Sita Kumari</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Citizen • Pokhara • 4 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-[#e8f5e8] text-[#2e7d32] px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Resolved</span>
+</div>
+</div>
+<div class="mb-3">
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1 block">Complaint</span>
+<h4 class="headline-font text-lg font-bold text-primary leading-tight">Water supply problem in Pokhara</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-4 text-sm">
+Water supply has been irregular in our area for the past week. The municipal corporation promised to fix it but nothing has changed. Families are facing difficulties in daily chores and hygiene maintenance.
+</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-6">
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+<span class="count">8</span> Supporters
+                        </button>
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="count">3</span> Comments
+                        </button>
+</div>
+<a class="text-primary font-bold text-xs hover:underline decoration-2 underline-offset-4" href="/complaint_detail/2/">View Details</a>
+</div>
+</div>
+</article>
+
+<!-- Complaint Card -->
+<article class="bg-surface-container-lowest overflow-hidden transition-all shadow-md border-2 border-primary/10 rounded-2xl">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-sm tracking-tight">Bikash Thapa</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Citizen • Lalitpur • 6 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-[#fff3e0] text-[#ef6c00] px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Processing</span>
+</div>
+</div>
+<div class="mb-3">
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1 block">Complaint</span>
+<h4 class="headline-font text-lg font-bold text-primary leading-tight">Street lighting not working</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-4 text-sm">
+Several street lights in our neighborhood have been out for over a month. This has created safety concerns, especially during evening hours. The local authority has been informed but no maintenance work has been done yet.
+</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-6">
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+<span class="count">15</span> Supporters
+                        </button>
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="count">7</span> Comments
+                        </button>
+</div>
+<a class="text-primary font-bold text-xs hover:underline decoration-2 underline-offset-4" href="/complaint_detail/3/">View Details</a>
+</div>
+</div>
+</article>
+
+<!-- Complaint Card -->
+<article class="bg-surface-container-lowest overflow-hidden transition-all shadow-md border-2 border-primary/10 rounded-2xl">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-sm tracking-tight">Anjali Sharma</h3>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Citizen • Bhaktapur • 8 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-[#fff8e1] text-[#f57f17] px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Pending</span>
+</div>
+</div>
+<div class="mb-3">
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest mb-1 block">Complaint</span>
+<h4 class="headline-font text-lg font-bold text-primary leading-tight">Garbage collection delay</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-4 text-sm">
+Garbage collection has been delayed for the past three days in our area. Piles of waste are accumulating, creating unhygienic conditions and attracting pests. The municipal workers are not responding to our calls.
+</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-6">
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+<span class="count">6</span> Supporters
+                        </button>
+<button class="flex items-center gap-1.5 text-outline hover:text-primary transition-colors text-xs font-semibold">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="count">2</span> Comments
+                        </button>
+</div>
+<a class="text-primary font-bold text-xs hover:underline decoration-2 underline-offset-4" href="/complaint_detail/4/">View Details</a>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-safe pt-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-[0_-2px_10px_rgba(0,0,0,0.05)] border-t border-slate-200 dark:border-slate-800 z-50">
+<a class="flex flex-col items-center justify-center text-primary dark:text-blue-200 rounded-xl px-4 py-1" href="/feed/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rss_feed</span>
+<span class="font-inter text-[10px] font-bold tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-primary transition-colors" href="/submit_complaint/">
+<span class="material-symbols-outlined">camera_enhance</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Report</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-primary transition-colors" href="/messages/">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-primary transition-colors" href="/profile/">
+<span class="material-symbols-outlined">person</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (Instant Capture/Live) -->
+<div class="fixed bottom-24 right-6 md:right-10 flex flex-col items-end gap-3 z-[60]">
+<div class="flex flex-col gap-3 mb-2 animate-in fade-in slide-in-from-bottom-4 duration-300" id="post-options-menu">
+<button class="flex items-center gap-3 bg-white dark:bg-slate-800 text-primary px-4 py-3 rounded-full shadow-xl border border-primary/10 hover:bg-primary/5 transition-all group" onclick="startCamera()">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">photo_camera</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Instant Photo</span>
+</button>
+<button class="flex items-center gap-3 lali-gurans-gradient text-white px-5 py-3 rounded-full shadow-xl hover:opacity-90 transition-all group" onclick="simulateLive()">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">live_tv</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Go Live Proof</span>
+</button>
+</div>
+<button class="w-16 h-16 lali-gurans-gradient text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-all border-4 border-white dark:border-slate-900 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">add_a_photo</span>
+</button>
+</div>
+<div class="hidden fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-4" id="camera-modal">
+<video class="w-full max-w-lg rounded-2xl shadow-2xl bg-slate-900" id="camera-preview"></video>
+<div class="mt-8 flex gap-4">
+<button class="bg-white text-black px-8 py-3 rounded-full font-bold uppercase tracking-widest" onclick="closeCamera()">Close</button>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest">Capture</button>
+</div>
+</div>
+</body></html>

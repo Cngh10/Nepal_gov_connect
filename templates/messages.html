@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nepal Public-Gov Connect - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#920022",
+                        "surface-bright": "#f9f9fb",
+                        "surface-variant": "#e2e2e4",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary": "#ba002e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f0f2",
+                        "on-secondary-fixed": "#40000a",
+                        "outline": "#747683",
+                        "on-tertiary-container": "#ff8a62",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#12419b",
+                        "outline-variant": "#c4c6d4",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434652",
+                        "on-tertiary-fixed-variant": "#802a07",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadc",
+                        "surface-tint": "#335ab4",
+                        "surface-container": "#eeeef0",
+                        "primary-fixed": "#dae1ff",
+                        "secondary-fixed": "#ffdad9",
+                        "on-primary-fixed": "#001849",
+                        "on-background": "#1a1c1d",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-low": "#f3f3f5",
+                        "background": "#f9f9fb",
+                        "primary": "#002465",
+                        "surface": "#f9f9fb",
+                        "primary-container": "#003893",
+                        "on-primary-container": "#88a7ff",
+                        "inverse-surface": "#2f3132",
+                        "tertiary": "#501400",
+                        "tertiary-container": "#752201",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1d",
+                        "surface-container-highest": "#e2e2e4",
+                        "secondary-fixed-dim": "#ffb3b3",
+                        "inverse-primary": "#b3c5ff",
+                        "secondary-container": "#e31c40",
+                        "surface-container-high": "#e8e8ea",
+                        "on-secondary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Public Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9fb;
+        }
+        .chat-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Custom scrollbar for better mobile feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<div class="chat-container max-w-md mx-auto bg-surface relative shadow-2xl overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm flex justify-between items-center px-4 h-16 max-w-md">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 duration-200 hover:bg-slate-100 p-2 rounded-full transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Official Support" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB91J0haQmWcvabf138Bn3nwvTwb7bwZXjTJ5AUqR0FHegWle_CKveMNBHZCCUcqpI5dD_TlzCVLy2bFcdmV_KGsidiTWPlsrbMRvffyaN8FuHuspjX332CNA13A-C6Ivd9ONkGjUWC11HnYHDIZE6F83Ajq6Z5VFlDGLV0nQ5XrvP85NIlD0W849YDyPLpzCmuGArQGijF7SnBLN_2WzKyMNwBTH2a66-slP6aMn4E9amzbjhDXo8AyGODeDRqqNKw_Y_uVMyLxUSA"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h1 class="font-['Public_Sans'] font-semibold tracking-tight text-primary text-sm">Official Support - Ward 4</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-medium">Active Now</p>
+</div>
+</div>
+</div>
+<button class="active:scale-95 duration-200 hover:bg-slate-100 p-2 rounded-full transition-colors text-primary">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Message List -->
+<main class="flex-1 overflow-y-auto pt-20 pb-32 px-4 space-y-6" id="chat-window">
+<!-- Date Separator -->
+<div class="flex justify-center">
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest bg-surface-container-low px-3 py-1 rounded-full">Today</span>
+</div>
+<!-- Incoming Message -->
+<div class="flex flex-col items-start max-w-[85%] group">
+<div class="bg-surface-container-low text-on-surface p-4 rounded-2xl rounded-tl-none shadow-sm transition-all duration-300">
+<p class="text-sm leading-relaxed">Hello Rajesh, we have assigned your report #48291 to the sanitation team. They will be on-site tomorrow.</p>
+</div>
+<div class="flex items-center mt-1 ml-1">
+<span class="text-[10px] text-slate-400 font-medium">10:15 AM</span>
+</div>
+</div>
+<!-- Outgoing Message -->
+<div class="flex flex-col items-end self-end max-w-[85%]">
+<div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-md">
+<p class="text-sm leading-relaxed">Thank you for the update. Will I receive a notification when the work is complete?</p>
+</div>
+<div class="flex items-center mt-1 mr-1 gap-1">
+<span class="text-[10px] text-slate-400 font-medium">10:18 AM</span>
+<span class="material-symbols-outlined text-[14px] text-primary-container" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Visual Hook: Status Card -->
+<div class="mx-auto w-full max-w-[90%] bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-3 flex items-center gap-4">
+<div class="bg-blue-50 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary">Report #48291</p>
+<p class="text-[10px] text-slate-500">Scheduled for Tomorrow</p>
+</div>
+<button class="text-[10px] font-bold text-secondary uppercase tracking-tight">View Info</button>
+</div>
+</main>
+<!-- Message Input Area (Floating) -->
+<div class="fixed bottom-[72px] w-full max-w-md bg-white/95 backdrop-blur-lg border-t border-slate-100 p-3 z-40">
+<div class="flex items-center gap-2 bg-surface-container-low rounded-2xl px-4 py-1.5 transition-all focus-within:ring-2 focus-within:ring-primary/10">
+<button class="text-slate-500 hover:text-primary transition-colors p-1" id="upload-btn" title="Upload Image">
+<span class="material-symbols-outlined text-[22px]">attach_file</span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors p-1" id="camera-btn" title="Camera">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 placeholder:text-slate-400" id="message-input" placeholder="Type a message..." type="text"/>
+<button class="bg-primary text-white w-9 h-9 rounded-xl flex items-center justify-center active:scale-95 transition-transform shadow-lg shadow-primary/20" id="send-btn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- Consistent Bottom Navigation -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white border-t border-slate-100 h-[72px] flex items-center justify-around px-6 z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<div class="relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</div>
+<span class="text-[10px] font-bold">Chat</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+<!-- Hidden File Inputs -->
+<input accept="image/*" class="hidden" id="file-picker" type="file"/>
+<input accept="image/*" capture="environment" class="hidden" id="camera-picker" type="file"/>
+<!-- Background Editorial Element -->
+<div class="fixed top-0 right-0 -z-10 opacity-[0.03] select-none pointer-events-none">
+<span class="text-[200px] font-bold text-primary transform rotate-12 block leading-none">WARD 4</span>
+</div>
+</div>
+<script>
+        const chatWindow = document.getElementById('chat-window');
+        const messageInput = document.getElementById('message-input');
+        const sendBtn = document.getElementById('send-btn');
+        const uploadBtn = document.getElementById('upload-btn');
+        const cameraBtn = document.getElementById('camera-btn');
+        const filePicker = document.getElementById('file-picker');
+        const cameraPicker = document.getElementById('camera-picker');
+
+        function appendMessage(text) {
+            if (!text.trim()) return;
+
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            const messageHtml = `
+                <div class="flex flex-col items-end self-end max-w-[85%] animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-md">
+                        <p class="text-sm leading-relaxed">${text}</p>
+                    </div>
+                    <div class="flex items-center mt-1 mr-1 gap-1">
+                        <span class="text-[10px] text-slate-400 font-medium">${timeStr}</span>
+                        <span class="material-symbols-outlined text-[14px] text-primary-container" style="font-variation-settings: 'FILL' 1;">done</span>
+                    </div>
+                </div>
+            `;
+
+            chatWindow.insertAdjacentHTML('beforeend', messageHtml);
+            messageInput.value = '';
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+            
+            // Simulating double tick after a delay
+            setTimeout(() => {
+                const ticks = chatWindow.querySelectorAll('.material-symbols-outlined');
+                const lastTick = ticks[ticks.length - 1];
+                if (lastTick && lastTick.textContent === 'done') {
+                    lastTick.textContent = 'done_all';
+                }
+            }, 2000);
+        }
+
+        sendBtn.addEventListener('click', () => appendMessage(messageInput.value));
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                appendMessage(messageInput.value);
+            }
+        });
+
+        uploadBtn.addEventListener('click', () => filePicker.click());
+        cameraBtn.addEventListener('click', () => cameraPicker.click());
+
+        filePicker.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                appendMessage(`Sent a photo: ${e.target.files[0].name}`);
+            }
+        });
+
+        cameraPicker.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                appendMessage(`Captured and sent a photo`);
+            }
+        });
+
+        // Scroll to bottom initially
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    </script>
+</body></html>

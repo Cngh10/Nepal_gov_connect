@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complaint Details | Sovereign Connect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c4c6d4",
+              "secondary-fixed-dim": "#ffb3b3",
+              "on-tertiary-fixed-variant": "#802a07",
+              "surface-container-low": "#f3f3f5",
+              "surface-variant": "#e2e2e4",
+              "primary-container": "#003893",
+              "on-surface-variant": "#434652",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb59d",
+              "on-tertiary-fixed": "#390c00",
+              "tertiary": "#501400",
+              "on-secondary-fixed-variant": "#920022",
+              "secondary-container": "#e31c40",
+              "outline": "#747683",
+              "surface-container": "#eeeef0",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "background": "#f9f9fb",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e2e2e4",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-secondary-container": "#fffbff",
+              "on-primary-container": "#88a7ff",
+              "primary": "#002465",
+              "surface-dim": "#d9dadc",
+              "on-background": "#1a1c1d",
+              "on-surface": "#1a1c1d",
+              "surface-tint": "#335ab4",
+              "surface-bright": "#f9f9fb",
+              "secondary-fixed": "#ffdad9",
+              "surface": "#f9f9fb",
+              "secondary": "#ba002e",
+              "on-primary-fixed": "#001849",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e8e8ea",
+              "primary-fixed": "#dae1ff",
+              "on-secondary-fixed": "#40000a",
+              "inverse-on-surface": "#f0f0f2",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffdbd0",
+              "inverse-primary": "#b3c5ff",
+              "on-tertiary-container": "#ff8a62",
+              "tertiary-container": "#752201",
+              "on-primary-fixed-variant": "#12419b",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3132"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, .font-headline { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-800/20 shadow-sm dark:shadow-none h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<a class="p-2 hover:bg-surface-container-low rounded-full transition-colors" href="/feed/">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</a>
+<span class="text-xl font-bold text-[#002465] dark:text-white tracking-tight font-headline">Sovereign Connect</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#003893] dark:hover:text-blue-300 transition-colors font-headline tracking-tight" href="/feed/">Dashboard</a>
+<a class="text-[#003893] dark:text-blue-300 border-b-2 border-[#003893] pb-1 font-headline tracking-tight" href="/feed/">Activity</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#003893] dark:hover:text-blue-300 transition-colors font-headline tracking-tight" href="/profile/">Reports</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">account_circle</span>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col py-8 px-4 space-y-2 h-[calc(100vh-64px)] w-72 border-r border-slate-200 dark:border-slate-800 bg-[#f9f9fb] dark:bg-slate-900 sticky top-16">
+<div class="px-4 mb-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="professional portrait of a nepali citizen in formal attire with a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBv4n4qUZwqKYVAVHpzJnh-3qGDy47108Y34WvLQX5PNda7yRmlndOhQ3BWDsamMmlDcRyF6vSIrGgvh_KgLN9hj8oPyBfT94UnF6DVV08eT9SYINFhIDGIZeLGhB4qQ1NsiniPdPyyi6a6EYoreA4PnJQRwIhgDW__bYkyber6uwL5Dq6mouO2XEn4qsW3Spop-4qR1gf3SagV47Im21TBvW3tUN7xMDdjy2X-sfI5pQRiJUFO4uZ_jZCdK7Bj3RcYRjLFSx8TdRG"/>
+<div>
+<p class="text-primary dark:text-white font-bold leading-tight font-headline">National Portal</p>
+<p class="text-xs text-slate-500 font-medium">Verified Citizen</p>
+</div>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 font-headline" href="/feed/">
+<span class="material-symbols-outlined">home</span>
+<span>Home Feed</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#003893] dark:text-blue-300 shadow-sm rounded-lg transition-all duration-200 font-headline" href="/profile/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+<span>My Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 font-headline" href="/notifications/">
+<span class="material-symbols-outlined">history</span>
+<span>My Activity</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 font-headline" href="/feed/">
+<span class="material-symbols-outlined">campaign</span>
+<span>Announcements</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-200 font-headline" href="/profile/">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-primary transition-colors font-headline" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary font-headline" href="/login/">
+<span class="material-symbols-outlined">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 max-w-5xl mx-auto px-6 py-12 pb-32">
+<!-- Header Section -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-[#fff8e1] text-[#f57f17] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase font-label">Ref: #SC-90421</span>
+<span class="bg-blue-50 text-[#003893] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase font-label">IN PROGRESS</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-2 font-headline">Drinking Water Supply Interruption</h1>
+<p class="text-slate-500 font-medium">Submitted by <span class="text-on-surface">Rajesh K. Hamal</span> • Kathmandu, Ward No. 12</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                        Mark as Resolved
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Complaint Description -->
+<section class="md:col-span-8 bg-surface-container-lowest p-8 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-outline-variant/10">
+<h3 class="text-lg font-bold text-primary mb-4 font-headline uppercase tracking-wider text-[11px]">Issue Description</h3>
+<div class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-body">
+<p>The drinking water supply in the Sundhara area has been completely interrupted for the past 48 hours. This has caused significant distress to approximately 150 households in the immediate vicinity. No prior notice was issued by the Water Authority regarding maintenance or scheduled downtime.</p>
+<p class="mt-4">We have attempted to contact the local ward office, but have not received a definitive timeline for the restoration of service. This is a critical utility matter requiring immediate attention from the municipal technical team.</p>
+</div>
+<!-- Evidence Section -->
+<div class="mt-10">
+<h3 class="text-lg font-bold text-primary mb-4 font-headline uppercase tracking-wider text-[11px]">Submitted Evidence</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden group cursor-pointer relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="dry water tap in a traditional nepali kitchen showing no water flow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChmGh7jA_HFCr2Qa-97RHYEmdOd8MBBpz1_LMIOYA9xMsIhcQHAlZOYOEImPMWd4_eq59eTnmJsXXRMV4ajWDnkxTJXOLQKe1eSbFrqRigWVXjhzaFV9gFbzHKDf3lXb4F0d76m80MMkJYXLMjKwAAvG2zVR2JFYl8L9S7uMI_75vUEbkZ14WjXVbzSytUUkn14HH1Hk3Xma1kfhVXVD-iYmYCkMnQKRDTWWvwAPdj4Rw4xll8tZcGdmj6hHMNFqSLEByW25XbU5gg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group cursor-pointer relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="neighborhood residents gathering with empty water jars around a public tap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYQaIBxQTDS3ex2a27TQ505t4ZOremB02aMG2JhURHs-nk6IAEhWH7vEo4sAyi7_pM4vP3WHr6vHGDOulC8SHD843UaAJLeelbIiWPhGllSR8RvujBqkcDZYjTFZ9KS8krKqTZjqEAG9zj0VziaWmurOSqt5PoZYZ4AlE4jS3sZ5jfnb-kcciYwmHkAhhHVis4KVvnvjwTTTuRFpjKuklQU4Dm8mTCmmEG0z_ELJFTfhFbKixqrNdilN0JWZYDPPOsXMCzQsCHIviJ"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl bg-slate-100 flex flex-col items-center justify-center text-slate-400 gap-2 border-2 border-dashed border-slate-200">
+<span class="material-symbols-outlined text-3xl">play_circle</span>
+<span class="text-[10px] font-bold font-label tracking-tighter">VIDEO_01.MP4</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Content -->
+<aside class="md:col-span-4 space-y-6">
+<!-- Official Reply -->
+<div class="bg-primary text-white p-6 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<h3 class="text-[11px] font-bold uppercase tracking-widest opacity-80 mb-4 font-label">Department Response</h3>
+<div class="flex gap-4 items-start mb-4">
+<img class="w-12 h-12 rounded-full object-cover border-2 border-white/20" data-alt="middle-aged south asian man in an official government uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qHnij8AxxoOC0Ygk06xo6lciUae7cpuSJPkkUOZzX7hZdUhL0SEhL9JieidEp8sIDKyYt5chuaLrkOEkcJEQrTH_sC4VzsMJZfxP_WHK18l7dzge3LeKPup1_XVtddJcwabsQNpiz6ahWP7Md7NONQTbLM35JI6ss4Ddaf7rGoCR6lslgqpXtYtrjLMYxsSM-yVnjwlvoF0VEDgXn43WmqoNI5R88YQ6OSaIcd59TubVMtMngpEw1sZO4oBWG_Nn8fIXjtIgPoiR"/>
+<div>
+<p class="font-bold text-sm">Er. Binod Sharma</p>
+<p class="text-[10px] opacity-70">Chief Engineer, KUKL</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed mb-6 font-body italic opacity-90">"A technical team has been dispatched to identify the burst main line near the heritage zone. We expect to begin repairs within 4 hours. Water tankers are being mobilized as temporary relief."</p>
+<div class="text-[10px] font-bold font-label opacity-60">UPDATED: 2 HOURS AGO</div>
+</div>
+<!-- Upload Work Section -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/20">
+<h3 class="text-[11px] font-bold text-primary uppercase tracking-widest mb-4 font-label">Resolution Protocol</h3>
+<p class="text-xs text-slate-600 mb-6">Government employees must upload visual proof of work completed before marking as resolved.</p>
+<div class="space-y-4">
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center gap-3 hover:bg-white/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">cloud_upload</span>
+<p class="text-[10px] font-bold text-slate-500 font-label">UPLOAD WORK PROOF</p>
+</div>
+<textarea class="w-full bg-white rounded-xl border-none text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-primary/20 min-h-[100px] p-4" placeholder="Briefly describe the resolution steps taken..."></textarea>
+<button class="w-full bg-white text-primary border border-primary/20 py-3 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                                Post Proof &amp; Resolve
+                            </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe px-4 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all p-2 rounded-xl" href="/feed/">
+<span class="material-symbols-outlined">line_style</span>
+<span class="text-[11px] font-medium uppercase tracking-wider mt-1 font-label">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all p-2 rounded-xl" href="/submit_complaint/">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-[11px] font-medium uppercase tracking-wider mt-1 font-label">Submit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#003893] dark:text-blue-300 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-xl transition-all scale-95 duration-200" href="/profile/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-[11px] font-medium uppercase tracking-wider mt-1 font-label">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all p-2 rounded-xl" href="/profile/">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-medium uppercase tracking-wider mt-1 font-label">Profile</span>
+</a>
+</nav>
+</body></html>

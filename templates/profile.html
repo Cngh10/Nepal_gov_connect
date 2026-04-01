@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nepal Public-Gov Connect - Rajesh Hamal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-fixed-dim": "#ffb59d",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#920022",
+              "surface-bright": "#f9f9fb",
+              "surface-variant": "#e2e2e4",
+              "on-tertiary-fixed": "#390c00",
+              "secondary": "#ba002e",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f0f2",
+              "on-secondary-fixed": "#40000a",
+              "outline": "#747683",
+              "on-tertiary-container": "#ff8a62",
+              "on-secondary-container": "#fffbff",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#12419b",
+              "outline-variant": "#c4c6d4",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#434652",
+              "on-tertiary-fixed-variant": "#802a07",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d9dadc",
+              "surface-tint": "#335ab4",
+              "surface-container": "#eeeef0",
+              "primary-fixed": "#dae1ff",
+              "secondary-fixed": "#ffdad9",
+              "on-primary-fixed": "#001849",
+              "on-background": "#1a1c1d",
+              "tertiary-fixed": "#ffdbd0",
+              "surface-container-low": "#f3f3f5",
+              "background": "#f9f9fb",
+              "primary": "#002465",
+              "surface": "#f9f9fb",
+              "primary-container": "#003893",
+              "on-primary-container": "#88a7ff",
+              "inverse-surface": "#2f3132",
+              "tertiary": "#501400",
+              "tertiary-container": "#752201",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1d",
+              "surface-container-highest": "#e2e2e4",
+              "secondary-fixed-dim": "#ffb3b3",
+              "inverse-primary": "#b3c5ff",
+              "secondary-container": "#e31c40",
+              "surface-container-high": "#e8e8ea",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3 { font-family: 'Public Sans', sans-serif; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-3">
+<button class="text-[#002465] dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-lg font-bold text-[#002465] dark:text-blue-200 font-['Public_Sans'] tracking-tight">Nepal Public-Gov Connect</h1>
+</div>
+<button class="text-[#002465] dark:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-24 max-w-4xl mx-auto px-4 lg:px-0">
+<!-- Hero Profile Section -->
+<section class="relative bg-surface-container-lowest rounded-xl p-8 mb-6 overflow-hidden">
+<!-- Decorative Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16"></div>
+<div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
+<!-- Profile Image -->
+<div class="relative group">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden shadow-lg border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a dignified middle-aged Nepali man with short dark hair, warm confident expression, studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbCQeCFIpys3E4HMfgpygQI3WMBdApoqU-vb973i4kz8JTDKA9Rivp_ja76_jzWutXgtGWJ0pecxOlYpgJwrYFe5clFN0qENTOtXBlnkhoTr5Tum_a6sSFCbQTuJDmXos_IunwLunOq4baPIlrm2FcPkOYtUO2AkqiBZad6LpEmXeBUwjXzzRKvWsHXkcp8hYRg3CiPwr-ECIS963ZwPBtLoo3TSTfGuUtw90J5rkDROxA2LlPKvATlojuHjBqORGEhNEWSghzvcN7"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-white p-1.5 rounded-lg shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Profile Info -->
+<div class="flex-1 space-y-4" id="profile-info-container">
+<!-- Display Mode -->
+<div id="profile-display">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<h2 class="text-3xl font-extrabold text-primary tracking-tight" id="display-name">Rajesh Hamal</h2>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span class="text-sm" id="display-location">Lalitpur, Nepal</span>
+<span class="mx-1">•</span>
+<span class="bg-primary/5 text-primary text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded border border-primary/10">Verified Citizen</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border-2 border-outline-variant/30 text-primary font-bold text-sm hover:bg-surface-container-low transition-all active:scale-95 duration-200 flex items-center gap-2" id="edit-profile-btn">
+<span class="material-symbols-outlined text-sm">edit</span>
+          Edit Profile
+        </button>
+<a class="w-11 h-11 flex items-center justify-center rounded-lg bg-primary-container text-on-primary shadow-sm hover:brightness-110 transition-all active:scale-95 duration-200" href="/messages/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-2xl font-body mt-4" id="display-bio">
+      Actively reporting infrastructure issues and advocating for a cleaner Bagmati Corridor. Let's build a better Nepal.
+    </p>
+</div>
+<!-- Edit Mode -->
+<div class="hidden space-y-4 bg-surface-container-low p-4 rounded-xl" id="profile-edit">
+<div class="grid grid-cols-1 gap-4">
+<div>
+<label class="block text-xs font-bold uppercase text-on-surface-variant mb-1">Full Name</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-primary" id="edit-name-input" type="text" value="Rajesh Hamal"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-on-surface-variant mb-1">Location</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-primary" id="edit-location-input" type="text" value="Lalitpur, Nepal"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-on-surface-variant mb-1">Bio</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface-container-lowest focus:ring-primary" id="edit-bio-input" rows="3">Actively reporting infrastructure issues and advocating for a cleaner Bagmati Corridor. Let's build a better Nepal.</textarea>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 bg-primary text-white font-bold rounded-lg text-sm shadow-sm hover:bg-primary-container transition-colors" id="save-profile-btn">Save Changes</button>
+<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors" id="cancel-edit-btn">Cancel</button>
+</div>
+</div>
+<!-- Stats -->
+<div class="flex flex-wrap gap-8 pt-4 border-t border-surface-container">
+<a class="flex flex-col hover:opacity-70 transition-opacity" href="/connections/">
+<span class="text-2xl font-extrabold text-primary">2.4k</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-bold text-on-surface-variant">Followers</span>
+</a>
+<a class="flex flex-col hover:opacity-70 transition-opacity" href="/connections/">
+<span class="text-2xl font-extrabold text-primary">120</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-bold text-on-surface-variant">Following</span>
+</a>
+<div class="flex flex-col">
+<span class="text-2xl font-extrabold text-secondary">14</span>
+<span class="text-[10px] uppercase tracking-[0.1em] font-bold text-on-surface-variant">Complaints Resolved</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabs Section -->
+<nav class="flex border-b border-surface-container-high mb-6 overflow-x-auto no-scrollbar">
+<button class="px-6 py-4 text-sm font-bold text-primary border-b-2 border-primary transition-all whitespace-nowrap">My Activity</button>
+<button class="px-6 py-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-all whitespace-nowrap">Personal Complaints</button>
+<button class="px-6 py-4 text-sm font-medium text-on-surface-variant hover:text-primary transition-all whitespace-nowrap">Saved Posts</button>
+</nav>
+<!-- Activity Feed (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Complaint Card -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="potholes on a busy urban street with construction cones and vehicles in distance, dramatic afternoon sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjIzE8vweBFiBUWwca-glMuDbueWFD7gQ6hJur0jgocHTVGMh8P490Q4HjsKSBLC49cq5FmtLkHIUPKXGJq2I3EIW9gj9IpOj_CNma_GbkZ1TlX5J9FfXq47So2Ab-0dQHviGosGqms-8hvYGJQoS42ADZ3rZ1bNbYz4AeWjgXgcqD-fXN178yiz-itKQGcZF0k23YXh1pFV__ReA7K564tbUqfJAraWXx_ngQcT_A-mGCazPLY3EMcNODo7B4W451PRuL2ZksYvhz"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur-md text-secondary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+                            Resolved
+                        </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-primary leading-tight">Pothole Repair at Kupondole</h3>
+<span class="text-xs text-on-surface-variant font-medium">2 days ago</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">
+                        Major pothole at the main intersection repaired within 48 hours of reporting. Thanks to the Lalitpur Metropolitan City team.
+                    </p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+<span class="text-xs font-bold">142</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">comment</span>
+<span class="text-xs font-bold">24</span>
+</button>
+</div>
+<a class="text-primary text-xs font-bold uppercase tracking-wider hover:underline" href="#">View Details</a>
+</div>
+</div>
+</article>
+<!-- Activity Card -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div>
+<span class="text-xs text-on-surface-variant font-bold uppercase tracking-tighter">Advocacy Update</span>
+<div class="text-[10px] text-on-surface-variant opacity-60">Posted 5 hours ago</div>
+</div>
+</div>
+<h3 class="text-lg font-bold text-primary mb-3">Community Clean-up Drive: Bagmati Corridor</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Join us this Saturday for our weekly sanitation mission. We've coordinated with the ward office for waste disposal support. 
+                    </p>
+</div>
+<div class="mt-6">
+<div class="flex -space-x-2 mb-3">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="close up headshot of young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SScOQ7rCn5wvk-NVxQ7BESFbZ_lo9G0mYsrfZLa1Y8hOfqlhPLyXKshxnqsN7DHiZHyZ9Yb6Ioh1VgebzfuHEigUeWJvb3-aPhVT-xu8zNxEYhUdpE9-sZ14Vnhx3TRxZH-2tXsjpmqFW1R3OWPhdBAz4bgp3hmeotyQ9sutekeNAIp__augqpmsRvP_xONaErtDgE01vX9DbXYCeOp0pv6WxxWi_51YQ2fkyLPiYsHFFObGKpYl5K_l7ATWfPFQlLe2eLGL3McW"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="close up headshot of man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCO3UcIT5ML4IK5I_hS6vehfuBcPK95ue_cRzOQFxN5iEzEAigPWvuUrWzlz4-qUOTMawMSz4CDkNTaZNOSWRhb61X2mL-c-Yv2eY9HYO41x-AE9x2PySun0dtW4b57H_asgA1x_DpoQQ4PrquER8y7I28N1zX2rgoRjIIesynI61R2rHgF6KXB-lxyWD8z8wqjB1vE3mYMt9oprT0CCkUt4x4kCtsYwCpbkJh39IJng4RhveS_BNaXSDM3AJDmsUvX_L33nZCcCYP"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="close up headshot of person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKF3aZWUM_8My-s8USQYHfsyzC2fWJGZdZslZFIXvUWr9S7iDE2AWHb3IOHPi2cvMqL57jTGYtTFPPLKxiY0MDbY-0aeBrNZzyqYItQHGaQJ8kwtGvqV-XXTNi6uAXZnvF4avKRLeXrDpQMmByytM4wLtOxLA_93giasqCYfqD5UJtJ7R_JgCYXxfyz9b5wGG68OQOjOH_ycgHS-rqKuSTDg09jPYaaty5OUk-GXwH_Iv54tkOTGjdr4x-jtglYAVr6c1pK2rjTJG7"/>
+<div class="w-8 h-8 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+82</div>
+</div>
+<button class="w-full py-2 bg-primary text-white rounded-lg text-sm font-bold shadow-sm active:scale-[0.98] transition-all">Join Discussion</button>
+</div>
+</article>
+<!-- Small Status Card -->
+<article class="bg-surface-container-low rounded-xl p-5 border-l-4 border-secondary shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1 block">Critical Alert</span>
+<h3 class="text-base font-bold text-primary mb-1">Water Supply Disruption</h3>
+<p class="text-sm text-on-surface-variant">Reported issue at Ward 3 pipeline. Technicians are on-site.</p>
+</div>
+<span class="material-symbols-outlined text-secondary">warning</span>
+</div>
+</article>
+<!-- Shared Link Card -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex border border-surface-container">
+<div class="w-24 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary opacity-30">description</span>
+</div>
+<div class="p-4 flex-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest block mb-1">Official Resource</span>
+<h3 class="text-sm font-bold text-primary leading-snug">Nepal e-Gov Citizen Handbook 2024</h3>
+<p class="text-xs text-on-surface-variant mt-1">Useful guide for navigating the new portal...</p>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/feed/">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/connections/">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Connect</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/submit_complaint/">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] dark:hover:text-red-400 active:translate-y-0.5 transition-transform" href="/messages/">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#002465] dark:text-blue-300 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 active:translate-y-0.5 transition-transform" href="/profile/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const editBtn = document.getElementById('edit-profile-btn');
+    const saveBtn = document.getElementById('save-profile-btn');
+    const cancelBtn = document.getElementById('cancel-edit-btn');
+    const displayMode = document.getElementById('profile-display');
+    const editMode = document.getElementById('profile-edit');
+    
+    // Inputs
+    const nameInput = document.getElementById('edit-name-input');
+    const locationInput = document.getElementById('edit-location-input');
+    const bioInput = document.getElementById('edit-bio-input');
+    
+    // Display elements
+    const displayName = document.getElementById('display-name');
+    const displayLocation = document.getElementById('display-location');
+    const displayBio = document.getElementById('display-bio');
+
+    // Switch to edit mode
+    editBtn.addEventListener('click', () => {
+      displayMode.classList.add('hidden');
+      editMode.classList.remove('hidden');
+    });
+
+    // Real-time update logic
+    nameInput.addEventListener('input', (e) => {
+      displayName.textContent = e.target.value || "User Name";
+    });
+
+    // Save logic
+    saveBtn.addEventListener('click', () => {
+      // Final confirmation of values
+      displayName.textContent = nameInput.value;
+      displayLocation.textContent = locationInput.value;
+      displayBio.textContent = bioInput.value;
+      
+      // Toggle back
+      editMode.classList.add('hidden');
+      displayMode.classList.remove('hidden');
+    });
+
+    // Cancel logic
+    cancelBtn.addEventListener('click', () => {
+      // Revert display text to match original values (the ones in the inputs before editing)
+      // For simplicity in this demo, we just revert display back to whatever was there before toggling
+      // but a more robust way would be storing temp values.
+      
+      // Let's just sync display back to the "saved" state if they didn't hit save
+      // (Actually, if we update real-time, we should probably reset the display values on cancel)
+      
+      // Simplest reset for the request:
+      displayName.textContent = nameInput.defaultValue || "Rajesh Hamal";
+      displayLocation.textContent = locationInput.defaultValue || "Lalitpur, Nepal";
+      displayBio.textContent = bioInput.defaultValue || "Actively reporting infrastructure issues and advocating for a cleaner Bagmati Corridor. Let's build a better Nepal.";
+      
+      // Reset inputs to their initial default values too
+      nameInput.value = nameInput.defaultValue;
+      locationInput.value = locationInput.defaultValue;
+      bioInput.value = bioInput.defaultValue;
+
+      editMode.classList.add('hidden');
+      displayMode.classList.remove('hidden');
+    });
+  });
+</script>
+</body></html>

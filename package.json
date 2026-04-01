@@ -1,0 +1,29 @@
+{
+  "name": "nepal-public-gov-connect",
+  "version": "1.0.0",
+  "description": "A hybrid government service and social platform connecting Nepali citizens with verified government accounts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Error: no test specified && exit 1",
+    "start": "live-server",
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/main.css --watch"
+  },
+  "keywords": [
+    "django",
+    "nepal",
+    "government",
+    "social",
+    "citizen-connect"
+  ],
+  "author": "Stitch Design Partner",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "material-icons": "^1.13.8"
+  }
+}

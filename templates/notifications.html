@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications | Nepal Public-Gov Connect</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-fixed-dim": "#ffb59d",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#920022",
+              "surface-bright": "#f9f9fb",
+              "surface-variant": "#e2e2e4",
+              "on-tertiary-fixed": "#390c00",
+              "secondary": "#ba002e",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f0f2",
+              "on-secondary-fixed": "#40000a",
+              "outline": "#747683",
+              "on-tertiary-container": "#ff8a62",
+              "on-secondary-container": "#fffbff",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#12419b",
+              "outline-variant": "#c4c6d4",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#434652",
+              "on-tertiary-fixed-variant": "#802a07",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d9dadc",
+              "surface-tint": "#335ab4",
+              "surface-container": "#eeeef0",
+              "primary-fixed": "#dae1ff",
+              "secondary-fixed": "#ffdad9",
+              "on-primary-fixed": "#001849",
+              "on-background": "#1a1c1d",
+              "tertiary-fixed": "#ffdbd0",
+              "surface-container-low": "#f3f3f5",
+              "background": "#f9f9fb",
+              "primary": "#002465",
+              "surface": "#f9f9fb",
+              "primary-container": "#003893",
+              "on-primary-container": "#88a7ff",
+              "inverse-surface": "#2f3132",
+              "tertiary": "#501400",
+              "tertiary-container": "#752201",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1d",
+              "surface-container-highest": "#e2e2e4",
+              "secondary-fixed-dim": "#ffb3b3",
+              "inverse-primary": "#b3c5ff",
+              "secondary-container": "#e31c40",
+              "surface-container-high": "#e8e8ea",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9fb;
+            font-family: 'Inter', sans-serif;
+            color: #1a1c1d;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-4 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-blue-400">menu</span>
+</button>
+<a href="/feed/">
+<h1 class="text-lg font-bold text-[#002465] dark:text-blue-200 font-['Public_Sans'] tracking-tight">Nepal Public-Gov Connect</h1>
+</a>
+</div>
+<div class="flex items-center gap-2">
+<a class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full text-[#002465] dark:text-blue-400" href="/notifications/">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-4 max-w-3xl mx-auto min-h-screen">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label text-[0.75rem] font-medium tracking-widest uppercase text-secondary mb-2 block">Updates &amp; Alerts</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter text-primary">Notifications</h2>
+</div>
+<button class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-medium text-sm px-4 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+                Mark all as read
+            </button>
+</div>
+<!-- Notification List -->
+<div class="space-y-12">
+<!-- Group: Today -->
+<section>
+<div class="flex items-center gap-4 mb-6">
+<h3 class="font-headline text-lg font-bold text-on-surface-variant">Today</h3>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="space-y-4">
+<!-- Notification Item: Official (Resolved) -->
+<a class="group relative flex gap-4 p-5 rounded-2xl bg-surface-container-lowest editorial-shadow transition-all duration-300 hover:bg-blue-50/30 cursor-pointer block" href="/complaint_detail/">
+<div class="absolute left-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-full"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-700" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-green-700 bg-green-50 px-2 py-0.5 rounded">Official Update</span>
+<span class="text-xs text-outline font-medium">2h ago</span>
+</div>
+<p class="text-[0.95rem] leading-relaxed text-on-surface">
+                                Your complaint regarding <span class="font-bold text-primary">Bagmati Corridor</span> was marked as <span class="text-green-700 font-bold">RESOLVED</span> by Ministry of Environment.
+                            </p>
+</div>
+<div class="flex-shrink-0 self-center">
+<div class="w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+</a>
+<!-- Notification Item: Message -->
+<a class="group flex gap-4 p-5 rounded-2xl bg-surface-container-lowest editorial-shadow transition-all duration-300 hover:bg-blue-50/30 cursor-pointer block" href="/messages/">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-primary bg-blue-50 px-2 py-0.5 rounded">Support</span>
+<span class="text-xs text-outline font-medium">5h ago</span>
+</div>
+<p class="text-[0.95rem] leading-relaxed text-on-surface font-medium">
+                                New message from <span class="text-primary">Official Support - Ward 4</span> regarding your tax inquiry.
+                            </p>
+</div>
+<div class="flex-shrink-0 self-center">
+<div class="w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+</a>
+</div>
+</section>
+<!-- Group: Earlier -->
+<section>
+<div class="flex items-center gap-4 mb-6">
+<h3 class="font-headline text-lg font-bold text-on-surface-variant">Earlier</h3>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="space-y-4">
+<!-- Notification Item: Social Like -->
+<a class="group flex gap-4 p-5 rounded-2xl bg-white border border-transparent transition-all duration-300 hover:bg-surface-container-low cursor-pointer block" href="/complaint_detail/">
+<div class="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img class="w-full h-full object-cover" data-alt="portrait of a smiling nepalese woman with traditional nose ring and red dupatta in soft outdoor light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBknUxQ9BVyLu3aPlb-jg6oNidb14urmFbbJjcOUJElYuewjle3Pua0MEPsSwJ-oVoQeDw2YUl9dpXK1dlRbOOXsqxu_3kqKhnn6b9Db8d3A8HzlTKcamkVe7nNZ9yxW2o839yywspmM6t9SbALjb5KcoprRryiGpaRDUbDABciKfw0I8j7PltQCCIWzY3LjUtLCtxpVdd70_YuK7ecXt-H7j_kG6fxnZfF3LW_lVT4jAtnspn_i9Faii3G6vWwXsqgkyMMijoLUNDi"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-secondary">Engagement</span>
+</div>
+<span class="text-xs text-outline">Yesterday</span>
+</div>
+<p class="text-[0.95rem] leading-relaxed text-on-surface">
+<span class="font-bold">Sita Devi</span> and 14 others liked your complaint about local street lighting.
+                            </p>
+</div>
+</a>
+<!-- Notification Item: Follow -->
+<a class="group flex gap-4 p-5 rounded-2xl bg-white border border-transparent transition-all duration-300 hover:bg-surface-container-low cursor-pointer block" href="/profile/">
+<div class="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a young nepalese man in a business casual shirt with neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgTNmLSdukqkiV2uy4J9UKu7DtgNe2DmgeSHKEgRxukOCjgeOQCv--BX6VbYyGEYH7Td2JowPnmGFGABx75EfCCuCCz_vPneMnF8eNpvxNH5bGcG1im3F69TdbN8Ryx24O4RuqpuQMU7dM0JCbcXgww7QBU8Mqp0sk5KmUhgXSbISmhfC_NE7Wc-n-uPNtIQeAxrxD54bC2W2eesfITAnrZkyzpwbPU8FevFqq1yQsBCMkK7-FOXOvWmRBTbA5AtGLk9uLf-MycGL"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-sm">person_add</span>
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-primary">Connection</span>
+</div>
+<span class="text-xs text-outline">2 days ago</span>
+</div>
+<p class="text-[0.95rem] leading-relaxed text-on-surface">
+<span class="font-bold">Arjun Thapa</span> started following your updates.
+                            </p>
+</div>
+</a>
+<!-- Notification Item: Archive/History -->
+<div class="group flex gap-4 p-5 rounded-2xl bg-white border border-transparent transition-all duration-300 hover:bg-surface-container-low cursor-pointer opacity-70">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">description</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-outline">Record</span>
+<span class="text-xs text-outline">Nov 12</span>
+</div>
+<p class="text-[0.95rem] leading-relaxed text-on-surface">
+                                Your monthly citizenship activity report for October is now available for download.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Empty State Cushion -->
+<div class="mt-16 text-center py-12">
+<span class="material-symbols-outlined text-outline/20 text-6xl mb-4">notifications_paused</span>
+<p class="text-outline font-medium">You're all caught up for now.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] transition-transform active:translate-y-0.5" href="/feed/">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] transition-transform active:translate-y-0.5" href="/connections/">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Connect</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] transition-transform active:translate-y-0.5" href="/submit_complaint/">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#ba002e] transition-transform active:translate-y-0.5" href="/messages/">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#002465] dark:text-blue-300 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 transition-transform active:translate-y-0.5" href="/profile/">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
