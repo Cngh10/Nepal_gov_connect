@@ -26,7 +26,9 @@ A modern digital platform that bridges the gap between **citizens and government
 ![User Profile](./screenshots/profile.png)
 
 ### 📝 Submit Complaint
-![Submit Complaint](./screenshots/submit.png)
+![Submit Complaint](./screenshots/submit_complaint.png)
+![Submit Complaint](./screenshots/complaint.png)
+![Submit Complaint](./screenshots/submitf.png)
 
 ---
 
