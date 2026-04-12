@@ -5,3 +5,4 @@ channels
 daphne
 PyJWT
 djangorestframework
+djangorestframework-simplejwt
