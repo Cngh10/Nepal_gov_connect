@@ -4,3 +4,4 @@ whitenoise
 channels
 daphne
 PyJWT
+djangorestframework
